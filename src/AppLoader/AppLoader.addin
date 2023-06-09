@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>快速开发</Name>
+		<Assembly>AppLoader/AppLoader.dll</Assembly>
+		<ClientId>897cf6da-2b0b-4d4b-bd6a-4be7464d8de9</ClientId>
+		<FullClassName>AppLoader.App</FullClassName>
+		<VendorId>xml</VendorId>
+		<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+	</AddIn>
+</RevitAddIns>

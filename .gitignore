@@ -1,0 +1,11 @@
+# Compiled Object files
+**/.vs
+**/.suo
+**/bin
+**/obj
+
+#User-specific files
+*.user
+
+#Deprecated Nuget folder
+/packages/
