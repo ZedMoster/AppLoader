@@ -63,26 +63,6 @@ namespace Revit.Cmds.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
-        internal static System.Drawing.Bitmap ma {
-            get {
-                object obj = ResourceManager.GetObject("ma", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap ma_16 {
-            get {
-                object obj = ResourceManager.GetObject("ma_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
         internal static System.Drawing.Bitmap 测试功能1 {
             get {
                 object obj = ResourceManager.GetObject("测试功能1", resourceCulture);

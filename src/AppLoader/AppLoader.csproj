@@ -71,15 +71,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <ProjectReference Include="..\Revit.Cmds\Revit.Cmds.csproj">
       <Project>{c5b7f6f1-14a9-4c63-b5f0-10f9e241620d}</Project>
       <Name>Revit.Cmds</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
->>>>>>> 2880d01 (初始化项目)
     <PackageReference Include="Hybh.RevitAPI.Toolkit">
       <Version>1.1.1</Version>
     </PackageReference>
@@ -89,14 +86,5 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup>
-    <ProjectReference Include="..\Revit.Cmds\Revit.Cmds.csproj">
-      <Project>{c5b7f6f1-14a9-4c63-b5f0-10f9e241620d}</Project>
-      <Name>Revit.Cmds</Name>
-    </ProjectReference>
-  </ItemGroup>
-=======
->>>>>>> 2880d01 (初始化项目)
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

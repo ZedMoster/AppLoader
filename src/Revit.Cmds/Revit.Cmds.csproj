@@ -52,10 +52,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-<<<<<<< HEAD
     <Reference Include="System.Drawing" />
-=======
->>>>>>> 2880d01 (初始化项目)
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,7 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Cmd4.cs" />
     <Compile Include="Cmd3.cs" />
     <Compile Include="Cmd2.cs" />
@@ -83,11 +79,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-=======
-    <Compile Include="Cmd2.cs" />
-    <Compile Include="Cmd1.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
->>>>>>> 2880d01 (初始化项目)
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hybh.RevitAPI.Toolkit">
@@ -95,21 +86,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ma.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ma_16.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\测试功能1.png">
@@ -140,9 +120,6 @@
     <None Include="Resources\测试功能3_16.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-=======
-    <Folder Include="Res\" />
->>>>>>> 2880d01 (初始化项目)
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
