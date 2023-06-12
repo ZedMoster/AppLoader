@@ -42,6 +42,13 @@
 
 获取程序集目录下类库中包含全部的 **HybhAttribute** 特性的功能,添加功能区面板 
 
+dll生成目录下 **Resources** 目录存放功能图标文件,格式 *.png*
+
+- 测试.png
+- 测试_16.png
+
+为自定义功能图标则统一设置为默认图标
+
 ```c#
     public class App : ExternalApplication
     {
@@ -49,24 +56,26 @@
 
         public override void OnStartup()
         {
-            try
+            XmlDoc.Instance.UIapp = UIapp;
+            var panel = ControlledApplication.CreatePanel(tabName, tabName);
+            var types = XmlDoc.Instance.GetTypeByAttribute<HybhAttribute>(Location);
+            if (types.Any())
             {
-                XmlDoc.Instance.UIapp = UIapp;
-                var panel = ControlledApplication.CreatePanel(tabName, tabName);
-                var types = XmlDoc.Instance.GetTypeByAttribute<HybhAttribute>(Location);
-                XmlDoc.Logger.Debug("types Count:" + types.Count());
-                if (types.Any())
+                var pushButtonDatas = types.OrderBy(o => o.GetCustomAttribute<HybhAttribute>().Name)
+                    .Select(o => o.GetPushButtonData());
+
+                //// 添加功能
+                foreach (var item in pushButtonDatas)
                 {
-                    var sortTypes = types.OrderBy(o => o.GetCustomAttribute<HybhAttribute>().Name).ToArray();
-                    for (int i = 0; i < sortTypes.Length; i++)
-                    {
-                        panel.AddItem(sortTypes.ElementAtOrDefault(i).GetPushButtonData());
-                    }
+                    panel.AddPushButton(item);
                 }
-            }
-            catch (Exception ex)
-            {
-                XmlDoc.Print(ex.Message);
+
+                //// 添加下拉分割功能组
+                //panel.AddSplitButton(pushButtonDatas);
+
+                //// 添加下拉功能按钮
+                //panel.AddPulldownButton("测试功能", pushButtonDatas);
+
             }
         }
     }
@@ -89,7 +98,8 @@
 #### 事务组
 
 ```C#
-    doc.TransactionGroup(tg => {
+    doc.TransactionGroup(tg =>
+    {
         doc.Transaction(t =>
         { 
             // doc.Delete(wall.Id);
@@ -128,11 +138,12 @@
 - UIControlledApplicationExtensions
 - XYZExtensions
 
+
 ### **XmlDoc**
 
 XmlDoc包含 
 
-- *UIapp*, *UIdoc* 常用属性
-- *Task* 为外部事件封装方法
-- *Print* 可快速弹窗提示
-- *Logger* 包含 *Debug*,*Error*,*Infor* 日志信息
+- *UIapp*, *UIdoc*  常用属性
+- *Task*  为外部事件封装方法
+- *Print*  可快速弹窗提示
+- *Logger*  包含 *Debug*,*Error*,*Infor* 日志信息

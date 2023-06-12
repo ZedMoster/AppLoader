@@ -3,7 +3,7 @@ using Hybh.RevitAPI.Toolkit.Utils;
 
 namespace Revit.Cmds
 {
-    [Hybh.RevitAPI.Toolkit.Attributes.Hybh("测试功能1")]
+    [Hybh.RevitAPI.Toolkit.Attributes.Hybh("测试1")]
     [Autodesk.Revit.Attributes.Transaction(Autodesk.Revit.Attributes.TransactionMode.Manual)]
     public class Cmd1 : RevitCommand
     {

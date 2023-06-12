@@ -1,7 +1,6 @@
 ﻿using Hybh.RevitAPI.Toolkit.Attributes;
 using Hybh.RevitAPI.Toolkit.Extensions;
 using Hybh.RevitAPI.Toolkit.Utils;
-using System;
 using System.Linq;
 using System.Reflection;
 
@@ -9,30 +8,30 @@ namespace AppLoader
 {
     internal class App : ExternalApplication
     {
-        /// <summary>
-        /// 面板名称(自定义)
-        /// </summary>
         private const string tabName = "快速开发";
 
         public override void OnStartup()
         {
-            try
+            XmlDoc.Instance.UIapp = UIapp;
+            var panel = ControlledApplication.CreatePanel(tabName, tabName);
+            var types = XmlDoc.Instance.GetTypeByAttribute<HybhAttribute>(Location);
+            if (types.Any())
             {
-                XmlDoc.Instance.UIapp = UIapp;
-                var panel = ControlledApplication.CreatePanel(tabName, tabName);
-                var types = XmlDoc.Instance.GetTypeByAttribute<HybhAttribute>(Location);
-                if (types.Any())
+                var pushButtonDatas = types.OrderBy(o => o.GetCustomAttribute<HybhAttribute>().Name)
+                    .Select(o => o.GetPushButtonData());
+
+                //// 添加功能
+                foreach (var item in pushButtonDatas)
                 {
-                    var sortTypes = types.OrderBy(o => o.GetCustomAttribute<HybhAttribute>().Name).ToArray();
-                    for (int i = 0; i < sortTypes.Length; i++)
-                    {
-                        panel.AddItem(sortTypes.ElementAtOrDefault(i).GetPushButtonData());
-                    }
+                    panel.AddPushButton(item);
                 }
-            }
-            catch (Exception ex)
-            {
-                XmlDoc.Logger.Error(ex.Message, ex);
+
+                //// 添加下拉分割功能组
+                //panel.AddSplitButton(pushButtonDatas);
+
+                //// 添加下拉功能按钮
+                //panel.AddPulldownButton("测试功能", pushButtonDatas);
+
             }
         }
     }

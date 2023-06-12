@@ -46,10 +46,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Revit2019\RevitAPIUI.dll</HintPath>
     </Reference>
-    <Reference Include="RevitNET, Version=19.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Revit2019\RevitNET.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -82,7 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Hybh.RevitAPI.Toolkit">
-      <Version>1.1.1</Version>
+      <Version>1.1.6</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
